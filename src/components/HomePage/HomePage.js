@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "./HomePage.css";
 
 const tasklist = [
   {
@@ -15,16 +16,16 @@ const tasklist = [
 const Homepage = () => {
   return (
     <div className="homepage">
-      <h1 className="homepage__heading">BookMyShow Assignment</h1>
-      <section className="homepage__tasklist">
+      <h1 className="heading">BookMyShow Assignment</h1>
+      <section className="tasklist">
         {tasklist.map((task, index) => {
           return (
             <NavLink
               key={`task-${index}`}
               to={task.url}
-              className={`homepage__tasklist--task${index}`}
+              className={`tasklist__task`}
             >
-              {task.title}
+              <span className="tasklist__task--title">{task.title}</span>
             </NavLink>
           );
         })}
