@@ -27,6 +27,9 @@ body,
   --primary-brand-color: #21e6c1;
   --secondary-brand-color: #278ea5;
 
+  --error-color: #ebc0c0;
+  --error-text-color: #ff0000;
+
   --font-size-xs: 1.4rem;
   --font-size-s: 1.8rem;
   --font-size-m: 2.4rem;

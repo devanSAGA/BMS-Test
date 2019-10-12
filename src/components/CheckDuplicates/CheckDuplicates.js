@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./CheckDuplicates.css";
 
 class CheckDuplicates extends Component {
   state = {
@@ -101,32 +102,50 @@ class CheckDuplicates extends Component {
   render() {
     const { input, duplicateEnteries, enteries, error } = this.state;
     return (
-      <div>
-        <div>
+      <div className="centerd-container">
+        <h1 className="heading">Check Duplicates</h1>
+        <div className="input-section">
           <input
             type="text"
+            className="input"
             placeholder="Enter a Number"
             value={input}
             onChange={this.changeInput}
+            onKeyPress={event => {
+              let key = event.keyCode || event.which;
+              if (key === 13) {
+                this.addEntry();
+              }
+            }}
           />
-          <button onClick={this.addEntry}>Add</button>
+          <button className="button" onClick={this.addEntry}>
+            Add
+          </button>
         </div>
-        {error ? <div>{error}</div> : null}
-        <ul>
+        {error ? (
+          <div className="error">
+            <span className="error--text">{error}</span>
+          </div>
+        ) : null}
+        <ul className="notes-list">
           Note:
-          <li>You can add single entry</li>
+          <li>You can add single entry.</li>
           <li>
             You can enter comma seperated multiple enteries (for example
-            10,20,30)
+            10,20,30).
           </li>
           <li>You can enter a range of numbers too (for example 10-25).</li>
         </ul>
-        <div>
-          <div>{enteries.length ? enteries.join(",") : "No Entry Added."}</div>
-          <div>
+        <div className="results">
+          <div className="results__section">
+            <h3 className="results__section--heading">Final Enteries: </h3>
+            {enteries.length ? enteries.join(", ") : "No Entry Added."}
+          </div>
+          <div className="results__section">
+            <h3 className="results__section--heading">Duplicate Enteries: </h3>
             {duplicateEnteries.length
-              ? duplicateEnteries.join(",")
-              : "No Duplicate Entry"}
+              ? duplicateEnteries.join(", ")
+              : "No Duplicate Entry."}
           </div>
         </div>
       </div>

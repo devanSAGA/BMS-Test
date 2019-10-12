@@ -15,7 +15,7 @@ const tasklist = [
 
 const Homepage = () => {
   return (
-    <div className="homepage">
+    <div className="centerd-container">
       <h1 className="heading">BookMyShow Assignment</h1>
       <section className="tasklist">
         {tasklist.map((task, index) => {
