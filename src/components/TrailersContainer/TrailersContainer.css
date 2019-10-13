@@ -1,0 +1,40 @@
+.trailers-page {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--secondary-brand-color);
+}
+
+.header__logo {
+  padding: 0 1rem;
+  width: 8rem;
+  color: var(--primary-brand-color);
+  fill: var(--primary-brand-color);
+}
+
+.header__title {
+  color: var(--primary-text-color);
+  font-size: var(--font-size-l);
+}
+
+.movies-list {
+  padding: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /* grid-template-columns: repeat(auto-fit, minmax(232px, 1fr)); */
+  /* grid-gap: 2rem; */
+}

@@ -3,7 +3,7 @@
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 html {
@@ -17,7 +17,7 @@ body,
 }
 
 :root {
-  --primary-color: #2a2438;
+  --primary-color: #26282b;
   --secondary-color: #352f44;
   --tertiary-color: #5c5470;
 
@@ -28,7 +28,7 @@ body,
   --secondary-brand-color: #278ea5;
 
   --error-color: #ebc0c0;
-  --error-text-color: #ff0000;
+  --error-text-color: #d72323;
 
   --font-size-xs: 1.4rem;
   --font-size-s: 1.8rem;

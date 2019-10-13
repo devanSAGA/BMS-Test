@@ -1,0 +1,125 @@
+.event-trailer {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  width: 100%;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+  height: 60rem;
+}
+
+.event-trailer__iframe {
+  width: 65%;
+  height: 100%;
+  margin-right: 2rem;
+}
+
+.iframe-container {
+  position: relative;
+  width: 100%;
+  padding-top: 60rem;
+}
+
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.event-trailer-rightbox {
+  width: 35%;
+  height: 100%;
+  padding: 2rem;
+  background-color: var(--secondary-color);
+}
+
+.event-trailer__info {
+  height: 85%;
+}
+
+.event-trailer__info--title {
+  color: var(--primary-text-color);
+  font-size: var(--font-size-l);
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.title-and-closeicon {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: space-between;
+}
+
+.close-icon {
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  color: var(--primary-text-color);
+  cursor: pointer;
+}
+
+.event-trailer__info--lang {
+  color: var(--secondary-text-color);
+  font-size: var(--font-size-s);
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.rating-date-conatiner {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.rating-date-conatiner .icon {
+  color: var(--secondary-text-color);
+}
+
+.event-trailer__info--date .icon,
+.event-trailer__info--votes .icon {
+  padding-right: 1rem;
+}
+
+.event-trailer__info--date,
+.event-trailer__info--votes {
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
+  font-size: var(--font-size-xs);
+  color: var(--primary-brand-color);
+  font-weight: 700;
+}
+
+.thumbsup,
+.thumbsdown,
+.helpcircle {
+  text-align: center;
+  font-weight: 600;
+  font-size: var(--font-size-xs);
+  padding: 2rem 0;
+  cursor: pointer;
+}
+
+.thumbsup {
+  color: var(--primary-brand-color);
+}
+
+.thumbsdown {
+  color: var(--error-text-color);
+}
+
+.helpcircle {
+  color: rgb(255, 238, 89);
+}
+
+.event-trailer__actions {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: space-between;
+  height: 15%;
+}
