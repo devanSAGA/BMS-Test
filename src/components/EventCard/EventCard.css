@@ -1,4 +1,4 @@
-.movie-card {
+.event-card {
   min-height: 30rem;
   text-align: center;
   width: 25rem;
@@ -11,7 +11,7 @@
   border: 2px solid var(--primary-brand-color);
 }
 
-.movie-card--date {
+.event-card--date {
   position: absolute;
   border-radius: 50%;
   width: 4rem;
@@ -31,7 +31,7 @@
   position: relative;
 }
 
-.movie-card--playicon {
+.event-card--playicon {
   color: var(--primary-text-color);
   position: absolute;
   top: 13rem;
@@ -40,18 +40,18 @@
   cursor: pointer;
 }
 
-.movie-card--playicon:hover {
+.event-card--playicon:hover {
   transform: scale(1.2);
 }
 
-.movie-card--poster {
+.event-card--poster {
   opacity: 0.9;
   width: 100%;
   margin: 0 auto;
   cursor: pointer;
 }
 
-.movie-card--title {
+.event-card--title {
   padding-top: 5px;
   font-size: var(--font-size-xs);
   color: var(--primary-text-color);

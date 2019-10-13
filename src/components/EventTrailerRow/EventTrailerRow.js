@@ -1,8 +1,8 @@
 import React from "react";
-import "./TrailerRow.css";
+import "./EventTrailerRow.css";
 import { ThumbsDown, ThumbsUp, HelpCircle, Calendar, X } from "react-feather";
 
-const TrailerRow = props => {
+const EventTrailerRow = props => {
   return (
     <div className="event-trailer">
       <div className="event-trailer__iframe">
@@ -59,4 +59,4 @@ const TrailerRow = props => {
   );
 };
 
-export default TrailerRow;
+export default EventTrailerRow;

@@ -29,12 +29,10 @@
   font-size: var(--font-size-l);
 }
 
-.movies-list {
+.events-list {
   padding: 3rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  /* grid-template-columns: repeat(auto-fit, minmax(232px, 1fr)); */
-  /* grid-gap: 2rem; */
 }

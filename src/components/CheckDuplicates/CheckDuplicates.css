@@ -22,7 +22,7 @@
 .input-section .input {
   padding: 1rem 1.5rem;
   margin-right: 1.5rem;
-  height: 3rem;
+  height: 5rem;
   width: 30rem;
   border: 0;
   border-radius: 5px;
@@ -43,7 +43,7 @@
   outline: 0;
   padding: 1rem 2rem;
   border-radius: 5px;
-  height: 3rem;
+  height: 5rem;
 }
 
 .notes-list {

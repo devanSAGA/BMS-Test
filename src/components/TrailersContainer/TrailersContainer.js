@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import { Video } from "react-feather";
-import MovieCard from "../MovieCard";
-import TrailerRow from "../TrailerRow";
+import EventCard from "../EventCard";
+import EventTrailerRow from "../EventTrailerRow";
 import "./TrailersContainer.css";
 
 class TrailersContainer extends Component {
   state = {
-    moviesData: [],
+    eventsData: [],
     isLoading: false,
     error: "",
-    showTrailerRow: false,
-    moviesList: []
+    isTrailerRowShowing: false,
+    eventsList: []
   };
 
   componentDidMount() {
@@ -21,9 +21,9 @@ class TrailersContainer extends Component {
       .then(response => response.text())
       .then(data =>
         this.setState(
-          { moviesData: JSON.parse(data), isLoading: false },
+          { eventsData: JSON.parse(data), isLoading: false },
           () => {
-            this.renderMoviesList(this.state.moviesData[1]);
+            this.renderEventsList(this.state.eventsData[1]);
           }
         )
       )
@@ -33,39 +33,39 @@ class TrailersContainer extends Component {
   getNumberOfColumns = () => {
     let screenWidth = window.innerWidth;
     let margin = 60;
-    let movieCardWidth = 260;
-    let numberOfColumns = Math.floor((screenWidth - margin) / movieCardWidth);
+    let eventCardWidth = 260;
+    let numberOfColumns = Math.floor((screenWidth - margin) / eventCardWidth);
     return numberOfColumns;
   };
 
-  renderMoviesList = (moviesData, indexOfClickedMovie = null) => {
-    const moviesList = [];
+  renderEventsList = (eventsData, indexOfClickedEvent = null) => {
+    const eventsList = [];
     let insertTrailerBeforeIndex = null;
-    let idOfClickedMovie = null;
-    if (indexOfClickedMovie) {
+    let idOfClickedEvent = null;
+    if (indexOfClickedEvent) {
       let numberOfColumns = this.getNumberOfColumns();
-      let rowNumberOfClickedMovie =
-        Math.ceil(indexOfClickedMovie / numberOfColumns) - 1;
-      insertTrailerBeforeIndex = rowNumberOfClickedMovie * numberOfColumns;
+      let rowNumberOfClickedEvent =
+        Math.ceil(indexOfClickedEvent / numberOfColumns) - 1;
+      insertTrailerBeforeIndex = rowNumberOfClickedEvent * numberOfColumns;
     }
-    Object.keys(moviesData).forEach((movieId, index) => {
-      const { EventTitle, ShowDate } = moviesData[movieId];
+    Object.keys(eventsData).forEach((movieId, index) => {
+      const { EventTitle, ShowDate } = eventsData[movieId];
       if (
         insertTrailerBeforeIndex !== null &&
         index === insertTrailerBeforeIndex &&
-        this.state.showTrailerRow
+        this.state.isTrailerRowShowing
       ) {
-        idOfClickedMovie = Object.keys(moviesData)[indexOfClickedMovie - 1];
+        idOfClickedEvent = Object.keys(eventsData)[indexOfClickedEvent - 1];
         const {
           EventTitle,
           ShowDate,
           TrailerURL,
           EventLanguage,
           EventDimension
-        } = moviesData[idOfClickedMovie];
+        } = eventsData[idOfClickedEvent];
         let videoId = TrailerURL.split("=")[1].split("&")[0];
-        moviesList.push(
-          <TrailerRow
+        eventsList.push(
+          <EventTrailerRow
             title={EventTitle}
             date={ShowDate}
             eventLanguage={EventLanguage}
@@ -75,9 +75,9 @@ class TrailersContainer extends Component {
           />
         );
       }
-      moviesList.push(
-        <MovieCard
-          isSelected={idOfClickedMovie === movieId}
+      eventsList.push(
+        <EventCard
+          isSelected={idOfClickedEvent === movieId}
           key={movieId}
           title={EventTitle}
           date={ShowDate}
@@ -86,16 +86,16 @@ class TrailersContainer extends Component {
         />
       );
     });
-    this.setState({ moviesList });
+    this.setState({ eventsList });
   };
 
-  showTrailer = indexOfClickedMovie => {
+  showTrailer = indexOfClickedEvent => {
     this.setState(
       {
-        showTrailerRow: true
+        isTrailerRowShowing: true
       },
       () => {
-        this.renderMoviesList(this.state.moviesData[1], indexOfClickedMovie);
+        this.renderEventsList(this.state.eventsData[1], indexOfClickedEvent);
       }
     );
   };
@@ -103,16 +103,16 @@ class TrailersContainer extends Component {
   hideTrailer = () => {
     this.setState(
       {
-        showTrailerRow: false
+        isTrailerRowShowing: false
       },
       () => {
-        this.renderMoviesList(this.state.moviesData[1]);
+        this.renderEventsList(this.state.eventsData[1]);
       }
     );
   };
 
   render() {
-    const { isLoading, moviesData, moviesList } = this.state;
+    const { isLoading, eventsData, eventsList } = this.state;
     return (
       <div className="trailers-page">
         <div className="header">
@@ -120,24 +120,11 @@ class TrailersContainer extends Component {
           <h1 className="header__title">BookMyShow</h1>
         </div>
         {isLoading ? <p>Loading...</p> : null}
-        {moviesData[1] ? (
-          Object.keys(moviesData[1]).length === 0 ? (
+        {eventsData[1] ? (
+          Object.keys(eventsData[1]).length === 0 ? (
             <p>No data</p>
           ) : (
-            <div className="movies-list">
-              {/* {Object.keys(moviesData[1]).map((movieId, index) => {
-                const { EventTitle, ShowDate } = moviesData[1][movieId];
-                return (
-                  <MovieCard
-                    key={movieId}
-                    title={EventTitle}
-                    date={ShowDate}
-                    posterURL={`https://in.bmscdn.com/events/moviecard/${movieId}.jpg`}
-                  />
-                );
-              })} */}
-              {moviesList}
-            </div>
+            <div className="events-list">{eventsList}</div>
           )
         ) : null}
       </div>
