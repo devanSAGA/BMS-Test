@@ -7,7 +7,7 @@ import TrailersContainer from "../components/TrailersContainer";
 
 const AppRouter = () => {
   return (
-    <BrowserRouter basename="/BMS-Test">
+    <BrowserRouter>
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/assignment1" component={CheckDuplicates} />

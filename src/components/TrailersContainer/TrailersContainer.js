@@ -17,7 +17,7 @@ class TrailersContainer extends Component {
     let API_URL =
       "https://in.bookmyshow.com/serv/getData?cmd=GETTRAILERS&mtype=cs";
     this.setState({ isLoading: true });
-    fetch(API_URL, {})
+    fetch(API_URL, { mode: "no-cors" })
       .then(response => response.text())
       .then(data =>
         this.setState(

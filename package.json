@@ -1,6 +1,7 @@
 {
   "name": "bms-test",
   "version": "0.1.0",
+  "homepage": "https://devansaga.github.io/BMS-Test",
   "private": true,
   "dependencies": {
     "react": "^16.10.2",

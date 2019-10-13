@@ -5,11 +5,11 @@ import "./HomePage.css";
 const tasklist = [
   {
     title: "Task 1 - Check Duplicates",
-    url: "/assignment1"
+    url: "assignment1"
   },
   {
     title: "Task 2 - Recreate Trailers Page",
-    url: "/assignment2"
+    url: "assignment2"
   }
 ];
 
