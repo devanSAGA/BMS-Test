@@ -80,11 +80,11 @@ class CheckDuplicates extends Component {
       const rangeInputs = input.split("-");
       if (rangeInputs.length !== 2) {
         error =
-          "Please enter valid Range. it should be in the format number1-number2";
+          "Please enter valid range. it should be in the format number1-number2.";
       } else if (isNaN(rangeInputs[0]) || isNaN(rangeInputs[1])) {
         error = "Please enter number as input.";
       } else if (parseInt(rangeInputs[0]) > parseInt(rangeInputs[1])) {
-        error = "Please add valid Range.";
+        error = "Please add valid range.";
       }
     } else if (isNaN(input)) {
       error = "Please enter number as input.";

@@ -17,18 +17,19 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 2rem;
+  width: 100%;
 }
 
 .input-section .input {
   padding: 1rem 1.5rem;
   margin-right: 1.5rem;
   height: 5rem;
-  width: 30rem;
   border: 0;
   border-radius: 5px;
   background-color: var(--tertiary-color);
   color: var(--primary-text-color);
   font-size: var(--font-size-s);
+  width: 35rem;
 }
 
 .input-section .input::placeholder {
@@ -95,4 +96,35 @@
 .error--text {
   font-size: var(--font-size-s);
   color: var(--error-text-color);
+}
+
+@media only screen and (max-width: 468px) {
+  .input-section,
+  .results,
+  .error {
+    width: 100%;
+  }
+
+  .heading {
+    text-align: center;
+    font-size: var(--font-size-l);
+    margin: 4rem 0;
+  }
+
+  .input-section .input {
+    width: 70%;
+  }
+
+  .button {
+    width: 25%;
+  }
+
+  .results {
+    flex-direction: column;
+  }
+
+  .results__section {
+    margin: 0 0 3rem 0;
+    width: 100%;
+  }
 }

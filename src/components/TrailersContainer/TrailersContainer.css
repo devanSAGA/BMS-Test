@@ -36,3 +36,20 @@
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
+.message-box {
+  padding: 20rem 0;
+  text-align: center;
+  font-size: var(--font-size-l);
+  color: var(--primary-brand-color);
+}
+
+.message-box .icon {
+  margin-right: 1rem;
+}
+
+@media only screen and (max-width: 468px) {
+  .events-list {
+    justify-content: center;
+  }
+}

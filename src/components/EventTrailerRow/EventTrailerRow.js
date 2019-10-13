@@ -22,8 +22,8 @@ const EventTrailerRow = props => {
         <div className="event-trailer__info">
           <div className="title-and-closeicon">
             <div className="event-trailer__info--title">{props.title}</div>
-            <button className="icon close-icon" onClick={props.hideTrailer}>
-              <X size={35} />
+            <button className="icon close-button" onClick={props.hideTrailer}>
+              <X className="close-icon" size={35} />
             </button>
           </div>
           <div className="event-trailer__info--lang">
@@ -42,15 +42,15 @@ const EventTrailerRow = props => {
         </div>
         <div className="event-trailer__actions">
           <div className="event-trailer__actions--icon thumbsup">
-            <ThumbsUp className="thumbsup-icon" size={40} />
+            <ThumbsUp className="icon thumbsup-icon" size={40} />
             <div>WILL WATCH</div>
           </div>
           <div className="event-trailer__actions--icon helpcircle">
-            <HelpCircle className=" help-icon" size={40} />
+            <HelpCircle className="icon help-icon" size={40} />
             <div>MAYBE</div>
           </div>
           <div className="event-trailer__actions--icon thumbsdown">
-            <ThumbsDown className=" thumbsdown-icon" size={40} />
+            <ThumbsDown className="icon thumbsdown-icon" size={40} />
             <div>WON'T WATCH</div>
           </div>
         </div>

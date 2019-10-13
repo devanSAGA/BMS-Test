@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Video } from "react-feather";
+import { Video, Loader, AlertTriangle } from "react-feather";
 import EventCard from "../EventCard";
 import EventTrailerRow from "../EventTrailerRow";
 import "./TrailersContainer.css";
@@ -112,14 +112,27 @@ class TrailersContainer extends Component {
   };
 
   render() {
-    const { isLoading, eventsData, eventsList } = this.state;
+    const { isLoading, eventsData, eventsList, error } = this.state;
+    if (error) {
+      return (
+        <p className="message-box">
+          <AlertTriangle size={20} className="icon" />
+          Sorry, Something Went Wrong. Try Again.
+        </p>
+      );
+    }
     return (
       <div className="trailers-page">
         <div className="header">
           <Video className="header__logo" size={45} />
-          <h1 className="header__title">BookMyShow</h1>
+          <h1 className="header__title">Events Trailers Page</h1>
         </div>
-        {isLoading ? <p>Loading...</p> : null}
+        {isLoading ? (
+          <p className="message-box">
+            <Loader size={20} className="icon" />
+            Loading...
+          </p>
+        ) : null}
         {eventsData[1] ? (
           Object.keys(eventsData[1]).length === 0 ? (
             <p>No data</p>

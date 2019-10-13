@@ -53,7 +53,7 @@
   justify-content: space-between;
 }
 
-.close-icon {
+.close-button {
   border: 0;
   outline: 0;
   background-color: transparent;
@@ -122,4 +122,58 @@
   display: flex;
   justify-content: space-between;
   height: 15%;
+}
+
+@media only screen and (max-width: 767px) {
+  .event-trailer {
+    flex-direction: column;
+  }
+
+  .iframe-container {
+    padding-top: 30rem;
+  }
+
+  .event-trailer__iframe {
+    margin: 0 0 2rem 0;
+    height: 30rem;
+  }
+
+  .event-trailer__iframe,
+  .event-trailer-rightbox {
+    width: 100%;
+  }
+
+  .event-trailer-rightbox {
+    height: 30rem;
+  }
+
+  .event-trailer__info--title {
+    font-size: var(--font-size-s);
+  }
+
+  .event-trailer__info--lang {
+    margin-bottom: 1rem;
+  }
+
+  .rating-date-conatiner .icon {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .event-trailer__actions--icon .icon {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .thumbsup,
+  .thumbsdown,
+  .helpcircle {
+    font-size: var(--font-size-xxs);
+    padding: 5px 0;
+  }
+
+  .close-icon {
+    height: 2rem;
+    width: 2rem;
+  }
 }
