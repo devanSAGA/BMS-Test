@@ -15,9 +15,9 @@ class TrailersContainer extends Component {
 
   componentDidMount() {
     let API_URL =
-      "https://in.bookmyshow.com/serv/getData?cmd=GETTRAILERS&mtype=cs";
+      "https://crossorigin.me/https://in.bookmyshow.com/serv/getData?cmd=GETTRAILERS&mtype=cs";
     this.setState({ isLoading: true });
-    fetch(API_URL, { mode: "no-cors" })
+    fetch(API_URL, {})
       .then(response => response.text())
       .then(data =>
         this.setState(
@@ -27,7 +27,9 @@ class TrailersContainer extends Component {
           }
         )
       )
-      .catch(error => this.setState({ error, isLoading: false }));
+      .catch(error => {
+        this.setState({ error, isLoading: false });
+      });
   }
 
   getNumberOfColumns = () => {
