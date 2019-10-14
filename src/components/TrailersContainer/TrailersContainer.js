@@ -15,7 +15,7 @@ class TrailersContainer extends Component {
 
   componentDidMount() {
     let API_URL =
-      "https://crossorigin.me/https://in.bookmyshow.com/serv/getData?cmd=GETTRAILERS&mtype=cs";
+      "https://in.bookmyshow.com/serv/getData?cmd=GETTRAILERS&mtype=cs";
     this.setState({ isLoading: true });
     fetch(API_URL, {})
       .then(response => response.text())
